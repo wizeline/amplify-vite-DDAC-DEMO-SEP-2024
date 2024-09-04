@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
+import { getItem } from "./services/api";
 
 const client = generateClient<Schema>();
 
@@ -38,6 +39,7 @@ function App() {
         <a href="https://docs.amplify.aws/react/start/quickstart/#make-frontend-updates">
           Review next step of this tutorial.
         </a>
+        <button onClick={() => getItem()}>Test</button>
       </div>
     </main>
   );
